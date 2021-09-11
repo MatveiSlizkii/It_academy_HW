@@ -1,6 +1,5 @@
 package home_work_1.Presentation;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Presentation2_average {

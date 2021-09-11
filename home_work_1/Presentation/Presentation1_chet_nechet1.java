@@ -1,7 +1,6 @@
 package home_work_1.Presentation;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Presentation1_chet_nechet1 {
     public static void main(String[] args) {

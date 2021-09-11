@@ -1,6 +1,6 @@
 package home_work_1.txt;
 
-import java.util.Objects;
+
 import java.util.Scanner;
 
 public class tx5_3 {

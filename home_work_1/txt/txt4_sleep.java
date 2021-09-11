@@ -3,15 +3,11 @@ package home_work_1.txt;
 import java.util.Scanner;
 
 public class txt4_sleep {
-    static boolean weekday;
-    static boolean vacation;
     static boolean sleep;
 
     static void sleepIn(boolean weekday, boolean vacation) {
         if (vacation || !weekday) {
             sleep = true;
-        } else {
-            sleep = false;
         }
         System.out.println(sleep);
     }

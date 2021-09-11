@@ -14,7 +14,6 @@ public class Presentation2_probability_chet {
                 chet += 1;
             }
         }
-        float probability = chet / length;
         System.out.println("вероятность выпадения случайных чисел = " + ((double) chet / length) * 100 + " %");
     }
 }

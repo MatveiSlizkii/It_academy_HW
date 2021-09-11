@@ -1,6 +1,6 @@
 package home_work_2.Presentation;
 
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class Presentation11_interval {

@@ -1,9 +1,8 @@
 package home_work_2.Presentation;
 
-import java.lang.reflect.Array;
+
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
+
 
 public class Presentation9_averageMinus {
     public static void main(String[] args) {
