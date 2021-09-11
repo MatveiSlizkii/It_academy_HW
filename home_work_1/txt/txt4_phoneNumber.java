@@ -1,7 +1,5 @@
 package home_work_1.txt;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.Scanner;
 
 public class txt4_phoneNumber {
@@ -16,12 +14,10 @@ public class txt4_phoneNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите ваш номер");
-        String number2 = scanner.next();
-        int[] numbers1 = new int[10]; //для примера
+        int[] yourNumbers1 = new int[10];
         for (int i = 0; i < 10; i++) {
-            numbers1[i] = scanner.nextInt();
+            yourNumbers1[i] = scanner.nextInt();
         }
-        txt4_phoneNumber.createPhoneNumber(numbers1);
-
+        txt4_phoneNumber.createPhoneNumber(yourNumbers1);
     }
 }
