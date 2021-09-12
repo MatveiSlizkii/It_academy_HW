@@ -15,15 +15,13 @@ public class Presentation9_averageMinus {
         for (int i = 0; i < array.length; i++) { //нашли сумму в массиве
             sum += array[i];
         }
-        System.out.println(sum);
+
         for (int i = 0; i < array.length; i++) {
             if (array[i] <= sum / array.length) {
                 System.out.print(array[i] + " ");
-            } else {
-                break;
             }
+
         }
 
     }
-
 }

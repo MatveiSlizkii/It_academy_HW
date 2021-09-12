@@ -14,7 +14,7 @@ public class Presentation5_step {
         int a = min;
         int b = 0;
         System.out.print(min + " ");
-        for (int i = 0; b < max; i++) {
+        while (b < max) {
             a += step;
             b = a + step;
             System.out.print(a + " ");

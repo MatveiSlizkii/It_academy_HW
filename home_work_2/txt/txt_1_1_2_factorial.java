@@ -17,7 +17,5 @@ public class txt_1_1_2_factorial {
         int nums = scanner.nextInt();
         System.out.println(factorial(nums));
     }
-
-    //System.out.println("Факториал числа " + num + "равен " + fact);
 }
 
