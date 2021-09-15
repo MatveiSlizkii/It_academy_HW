@@ -6,10 +6,10 @@ public class txt_1_3_stepen {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число");
-        int num = scanner.nextInt();
+        double num = scanner.nextDouble();
         System.out.println("Введите степень");
         int stepen = scanner.nextInt();
-        int answer = num;
+        double answer = num;
         for (int i = 0; i < stepen-1; i++) {
             answer = answer * num;
         }

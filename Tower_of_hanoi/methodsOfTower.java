@@ -27,75 +27,106 @@ public class methodsOfTower {
         System.out.println("   7) Закончить игру    ");
     }
 
-    public static void step(int num, int[][] fieldGame) { // действие
+    public static boolean step(int num, int[][] fieldGame, int gameMode) { // действие
+        boolean gameOver = true;
         int a = 0;
         int b = 0;
-        int num1 = num;
-        int[][] fieldGame1 = fieldGame;
-        if (num == 1) {
-            a = 0;
-            b = 1;
-        } else if (num == 2) {
-            a = 0;
-            b = 2;
-        } else if (num == 3) {
-            a = 1;
-            b = 0;
-        } else if (num == 4) {
-            a = 1;
-            b = 2;
-        } else if (num == 5) {
-            a = 2;
-            b = 0;
-        } else if (num == 6) {
-            a = 2;
-            b = 1;
-        } else if (num == 7) {
-            System.out.println("Игра окончена"); // перебить на булевое значение
+
+        switch (num) {
+            case 1:
+                a = 0;
+                b = 1;
+                break;
+            case 2:
+                a = 0;
+                b = 2;
+                break;
+            case 3:
+                a = 1;
+                b = 0;
+                break;
+            case 4:
+                a = 1;
+                b = 2;
+                break;
+            case 5:
+                a = 2;
+                b = 0;
+                break;
+            case 6:
+                a = 2;
+                b = 1;
+                break;
+            case 7:
+                System.out.println("Игра окончена"); // перебить на булевое значение
+                gameOver = false;
+                break;
         }
 
 
         int a1 = 0;
         for (int i = fieldGame.length - 1; i > 0; i--) {      //находим кольцо которое надо переставить
-            //fieldGame[i][a]
             if (fieldGame[i][a] > fieldGame[i - 1][a] && fieldGame[i][a] != 0) {
                 a1 = i;
             }
 
         }
-        int b1 = fieldGame.length - 1;
-        System.out.println("длина столбца" + b1);
+        int b1 = 0;
         for (int i = fieldGame.length - 1; i > 0; i--) { //находим свободное место там куда хотим перемести кольцо
-            if (fieldGame[i][b] > fieldGame[i - 1][b] && fieldGame[i][b] != 0) {
+            if (fieldGame[i][b] == 0) {
                 b1 = i;
-                System.out.println("ббббб1 " + b1);
+                i = 0;
             }
         }
-        System.out.println("ааааааа " + a1);
-        //     System.out.println(a1);
-//        System.out.println(b1);
-        //проверка можно ли вставить
-        if (b1 == fieldGame.length - 1) {
 
-            //      System.out.println(a1);
-            fieldGame[b1][b] = fieldGame[a1][a]; //переставили кольца
-            fieldGame[a1][a] = 0;
-        } else if (fieldGame[a1][a] > fieldGame[b1 + 1][b]) {
-            System.out.println("сюда не может встать это кольцо");
-            step(num1, fieldGame1);
+        if (gameOver) {
+            if (b1 == fieldGame.length - 1) { // Проверка пашет на расстановку!!!!!
 
-        } else {
-            fieldGame[b1][b] = fieldGame[a1][a1]; //переставили кольца
-            fieldGame[a1][a] = 0;
+                fieldGame[b1][b] = fieldGame[a1][a]; //переставили кольца
+                fieldGame[a1][a] = 0;
+            } else if
+            (fieldGame[a1][a] < fieldGame[b1 + 1][b]) {
+                fieldGame[b1][b] = fieldGame[a1][a]; //переставили кольца
+                fieldGame[a1][a] = 0;
+            } else {
+                if (gameMode !=2) {
+                    System.out.println("Вставить не представляется возможным");
+                }
+            }
         }
+
+        return gameOver;
     }
 
+
+    public static boolean winner(int num, int numStep, int[][] arr) { // действие
+        boolean win = false;
+        int stick = 0;
+        int numWin = num * (num - 1);
+//        System.out.println("ход" + numStep);
+        if (numStep >= numWin) {
+//            System.out.println("пошла родимая");
+//            System.out.println(arr[0].length);
+//            System.out.println(arr.length);
+
+            for (int i = 0; i < 3; i++) {
+                if (arr[arr.length - 1][i] == num) {
+                    stick = i;
+//                    System.out.println("определили что основа лежит в " + stick);
+                }
+            }
+            for (int i = arr.length - 2; i > -1; i--) {
+                if (arr[i][stick] == arr[i + 1][stick] - 1) {
+                    win = true;
+//                    System.out.println("ТРУУУУУУУ");
+                } else {
+                    win = false;
+                }
+            }
+        }
+        return win;
+    }
 }
-
-
-
-
-
 
 
 
