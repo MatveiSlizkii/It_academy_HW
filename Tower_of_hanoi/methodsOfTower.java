@@ -103,22 +103,15 @@ public class methodsOfTower {
         boolean win = false;
         int stick = 0;
         int numWin = num * (num - 1);
-//        System.out.println("ход" + numStep);
         if (numStep >= numWin) {
-//            System.out.println("пошла родимая");
-//            System.out.println(arr[0].length);
-//            System.out.println(arr.length);
-
             for (int i = 0; i < 3; i++) {
                 if (arr[arr.length - 1][i] == num) {
                     stick = i;
-//                    System.out.println("определили что основа лежит в " + stick);
                 }
             }
             for (int i = arr.length - 2; i > -1; i--) {
                 if (arr[i][stick] == arr[i + 1][stick] - 1) {
                     win = true;
-//                    System.out.println("ТРУУУУУУУ");
                 } else {
                     win = false;
                 }
