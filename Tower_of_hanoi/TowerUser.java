@@ -1,7 +1,7 @@
 package Tower_of_hanoi;
 
 import java.util.Scanner;
-public class testTower {
+public class TowerUser {
     public static void main(String[] args) {
         Field test = new Field();
         Scanner scanner = new Scanner(System.in);

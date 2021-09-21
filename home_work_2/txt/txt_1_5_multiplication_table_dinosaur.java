@@ -22,6 +22,21 @@ public class txt_1_5_multiplication_table_dinosaur {
             System.out.println();
         }
         System.out.println();
+        for (int a = 1; a < 11; a++) {
+            for (int i = 6; i < 10; i++) {
+                if (i * a < 10) {
+                    System.out.print(i + " x " + a + "  = " + i * a + "    "); //if сделан с целью несмещения из-за того
+                } else if (a == 10) {                                          //что в ответах ответ состоит из 2 цифр
+                    System.out.print(i + " x " + a + " = " + i * a + "   ");
+
+                } else {
+                    System.out.print(i + " x " + a + "  = " + i * a + "   ");
+                }
+            }
+            System.out.println();
+        }
+
+        System.out.println();
         System.out.println("                                   ########");
         System.out.println("                                  ####### ##");
         System.out.println("                                  ##########");
@@ -42,5 +57,6 @@ public class txt_1_5_multiplication_table_dinosaur {
         System.out.println("                                           #   ##");
         System.out.println("                                           #    #");
         System.out.println("                                          ##   ##");
+
     }
 }

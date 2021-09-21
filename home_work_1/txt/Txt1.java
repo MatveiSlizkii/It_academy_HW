@@ -1,6 +1,6 @@
 package home_work_1.txt;
 
-public class txt1 {
+public class Txt1 {
     public static void main (String[] args){
         int num1 = 42;
         int num2 = 15;
