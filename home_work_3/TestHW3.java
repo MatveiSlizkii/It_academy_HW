@@ -7,5 +7,6 @@ public class TestHW3 {
     public static void main(String[] args) {
         CalculatorWithOperator test = new CalculatorWithOperator();
         System.out.println(test.exponentiation(2.5, 3));
+
     }
 }
