@@ -2,7 +2,7 @@ package home_work_2.txt.arrays;
 
 import java.util.Scanner;
 
-public class txt_4_4_Random_Sorter {
+public class Txt_4_4_Random_Sorter {
     public static void main(String[] args) {
         SortUtils sort = new SortUtils();
         ArraysUtils adg = new ArraysUtils();

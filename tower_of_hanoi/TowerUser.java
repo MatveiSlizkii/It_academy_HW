@@ -1,15 +1,14 @@
-package Tower_of_hanoi;
+package tower_of_hanoi;
 
-import java.util.Random;
-
-public class TowerAI {
+import java.util.Scanner;
+public class TowerUser {
     public static void main(String[] args) {
         Field test = new Field();
-        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
         while (!test.ShowYouWin()) {
             test.AllGame(test.ShowStep1());
             if (!test.ShowYouWin()) {
-                test.entStep1(random.nextInt(6));
+                test.entStep1(scanner.nextInt());
             }
         }
     }

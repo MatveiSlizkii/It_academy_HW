@@ -1,37 +1,34 @@
 package home_work_2.txt.arrays;
 
-public class txt_2_2_2_secondEl_array {
+public class Txt_2_2_3_reverse_array {
     public static void main(String[] args) {
         ArraysUtils adg = new ArraysUtils();
         int[] arr = adg.arrayFromConsole();
-        int n = 1;
+        int n = arr.length - 1;
         System.out.println();
         do {
             System.out.print(arr[n] + " ");
-            n += 2;
-        } while (n < arr.length);
+            n--;
+        } while (n != -1);
         //while
         System.out.println();
-        n = 1;
-        while (n < arr.length) {
+        n = arr.length - 1;
+        while (n != -1) {
             System.out.print(arr[n] + " ");
-            n += 2;
+            n--;
         }
         //for
         System.out.println();
-        for (int i = 1; i < arr.length; i += 2) {
+        for (int i = arr.length - 1; i > -1; i--) {
             System.out.print(arr[i] + " ");
         }
         //foreach костыль
         System.out.println();
+        int i = arr.length - 1;
         for (int element : arr) {
-            element += 1;
-            if (element % 2 == 0) {
-                System.out.print(element + " ");
-            }
-
+            System.out.print(arr[i] + " ");
+            i--;
         }
+
     }
-
 }
-

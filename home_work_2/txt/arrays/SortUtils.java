@@ -5,12 +5,12 @@ import java.util.Scanner;
 
 public class SortUtils {
     public static int[] bubbleSorter(int[] array) {
-        boolean check = true; //надо ли делать сортировку до сих пор
-        while (check) {
-            check = false;
+        boolean found = true; //надо ли делать сортировку до сих пор
+        while (found) {
+            found = false;
             for (int i = 0; i < array.length - 1; i++) {
                 if (array[i] > array[i + 1]) {
-                    check = true;
+                    found = true;
                     int a = array[i];
                     array[i] = array[i + 1];
                     array[i + 1] = a;
@@ -21,9 +21,9 @@ public class SortUtils {
     }
 
     public static int[] shakerSorter(int[] array) {
-        boolean check = true; //надо ли делать сортировку до сих пор
-        while (check) {
-            check = false;
+        boolean found = true; //надо ли делать сортировку до сих пор
+        while (found) {
+            found = false;
             for (int i = 0; i < array.length - 1; i++) {
                 if (array[i] > array[i + 1]) {
                     int a = array[i];
@@ -33,7 +33,7 @@ public class SortUtils {
             }
             for (int i = array.length - 1; i >0; i--) {
                 if (array[i] < array[i - 1]) {
-                    check = true;
+                    found = true;
                     int a = array[i];
                     array[i] = array[i - 1];
                     array[i - 1] = a;

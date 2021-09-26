@@ -2,7 +2,7 @@ package home_work_2.txt;
 
 import java.util.Scanner;
 
-public class test {
+public class Test {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         double subtotal = 0.0;

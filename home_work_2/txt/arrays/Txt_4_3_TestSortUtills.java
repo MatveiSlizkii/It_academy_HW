@@ -1,6 +1,6 @@
 package home_work_2.txt.arrays;
 
-public class txt_4_3_TestSortUtills {
+public class Txt_4_3_TestSortUtills {
     public static void main(String[] args) {
         SortUtils sort = new SortUtils();
         int[] arr1 = {1, 2, 3, 4, 5, 6};

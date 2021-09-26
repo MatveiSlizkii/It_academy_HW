@@ -1,7 +1,4 @@
-package Tower_of_hanoi;
-
-import home_work_2.txt.arrays.ArraysUtils;
-import home_work_2.txt.arrays.SortUtils;
+package tower_of_hanoi;
 
 import java.util.Random;
 import java.util.Scanner;

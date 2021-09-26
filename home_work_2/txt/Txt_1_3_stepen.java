@@ -2,7 +2,7 @@ package home_work_2.txt;
 
 import java.util.Scanner;
 
-public class txt_1_3_stepen {
+public class Txt_1_3_stepen {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число");

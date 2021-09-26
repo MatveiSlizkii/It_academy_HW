@@ -1,4 +1,4 @@
-package Tower_of_hanoi;
+package tower_of_hanoi;
 
 
 public class methodsOfTower {

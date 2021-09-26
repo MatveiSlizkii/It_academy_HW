@@ -1,33 +1,31 @@
 package home_work_2.txt.arrays;
 
-public class txt_2_2_3_reverse_array {
+public class Txt_2_2_1_all_array {
     public static void main(String[] args) {
         ArraysUtils adg = new ArraysUtils();
         int[] arr = adg.arrayFromConsole();
-        int n = arr.length - 1;
+        int n = 0;
         System.out.println();
         do {
             System.out.print(arr[n] + " ");
-            n--;
-        } while (n != -1);
+            n++;
+        } while (n != arr.length);
         //while
         System.out.println();
-        n = arr.length - 1;
-        while (n != -1) {
+        n = 0;
+        while (n != arr.length) {
             System.out.print(arr[n] + " ");
-            n--;
+            n++;
         }
         //for
         System.out.println();
-        for (int i = arr.length - 1; i > -1; i--) {
+        for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
-        //foreach костыль
+        //foreach
         System.out.println();
-        int i = arr.length - 1;
         for (int element : arr) {
-            System.out.print(arr[i] + " ");
-            i--;
+            System.out.print(element + " ");
         }
 
     }

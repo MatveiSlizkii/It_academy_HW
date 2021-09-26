@@ -3,7 +3,7 @@ package home_work_2.Presentation;
 
 public class Presentation12_sum_num_in_arr {
     public static void main(String[] args) {
-        int[] arr = {12, 104, 81};
+        int[] arr = {1, 84, 76, 26, 52, 6, 6, 34, 27, 13};
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] < 0){                    //если в массиво будет отрицательное число, чтобы не складывать "отрицательные цифры"

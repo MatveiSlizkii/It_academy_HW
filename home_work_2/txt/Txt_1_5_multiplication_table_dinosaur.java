@@ -1,6 +1,6 @@
 package home_work_2.txt;
 
-public class txt_1_5_multiplication_table_dinosaur {
+public class Txt_1_5_multiplication_table_dinosaur {
     public static void main(String[] args) {
         System.out.println("#####   #     ####     #     #   # #  #       #");
         System.out.println("  #    # #    #       # #    #  ## #  #      # #");

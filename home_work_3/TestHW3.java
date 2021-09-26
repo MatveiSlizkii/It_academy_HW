@@ -1,6 +1,5 @@
 package home_work_3;
 
-import Tower_of_hanoi.Field;
 import home_work_3.calcs.simple.CalculatorWithOperator;
 
 public class TestHW3 {

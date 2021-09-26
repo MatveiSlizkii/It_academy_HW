@@ -3,7 +3,7 @@ package home_work_2.txt;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class txt_1_4_multiplyExact {
+public class Txt_1_4_multiplyExact {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("На что надо умножать 1");

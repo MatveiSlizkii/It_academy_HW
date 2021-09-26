@@ -1,6 +1,4 @@
-package Tower_of_hanoi;
-
-import java.util.Scanner;
+package tower_of_hanoi;
 
 public class Field {
 

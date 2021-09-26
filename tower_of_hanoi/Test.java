@@ -1,4 +1,4 @@
-package Tower_of_hanoi;
+package tower_of_hanoi;
 
 import java.util.Scanner;
 
