@@ -21,7 +21,7 @@ public class Txt2 {
         int test1 = 44 >> 2;
         System.out.println("тест " + test1);
         System.out.println(f);
-        //int g = (5 + 7 > 20 ? 68 >= 68 : 22 * 2 >> num1++) / --num; //почуму то ошибка но предполагаю (12 > 20 ? 68 >= 68 : 44 >>2)/7 потом (false ? true : 11)/7 потом 11/7 = 1
+        //int g = (5 + 7 > 20 ? 68 >= 68 : 22 * 2 >> num1++) / --num; //ошибка компиляции тк булевое значение нельзя поделить на число
         boolean g1 = 6 - 2 > 3 && 12 * 12 <= 119; //4 > 3 && 24 <=119 потом true && 144 <=119 потом true && false потом false
         System.out.println(g1);
         boolean k = true && false; //false
