@@ -1,6 +1,8 @@
 package home_work_3.calcs.simple;
 
-public class CalculatorWithOperator {
+import home_work_3.calcs.api.ICalculator;
+
+public class CalculatorWithOperator implements ICalculator {
     //деление, умножение, вычитание, сложение
     //Возведение в целую степень дробного положительного числа, Модуль числа, Квадратный корень из числа
     public double divide(double x, double y) {
@@ -11,11 +13,10 @@ public class CalculatorWithOperator {
         return (x * y);
     } //умножение
 
-    public double substract(double x, double y) {
+    public double subtract(double x, double y) {
         return (x - y);
-    } //вычитание
-
-    public double fold(double x, double y) {
+    } //деление
+        public double fold(double x, double y) {
         return (x + y);
     } //сложение
 

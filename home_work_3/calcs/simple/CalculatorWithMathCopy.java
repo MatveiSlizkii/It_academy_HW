@@ -1,6 +1,8 @@
 package home_work_3.calcs.simple;
 
-public class CalculatorWithMathCopy {
+import home_work_3.calcs.api.ICalculator;
+
+public class CalculatorWithMathCopy implements ICalculator {
     //деление, умножение, вычитание, сложение
     //Возведение в целую степень дробного положительного числа, Модуль числа, Квадратный корень из числа
     public double divide(double x, double y) {
@@ -11,7 +13,7 @@ public class CalculatorWithMathCopy {
         return (x * y);
     } //умножение
 
-    public double substract(double x, double y) {
+    public double subtract(double x, double y) {
         return (x - y);
     } //вычитание
 

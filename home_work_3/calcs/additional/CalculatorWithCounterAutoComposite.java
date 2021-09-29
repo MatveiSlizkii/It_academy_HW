@@ -5,10 +5,44 @@ import home_work_3.calcs.simple.CalculatorWithMathExtends;
 import home_work_3.calcs.simple.CalculatorWithOperator;
 
 public class CalculatorWithCounterAutoComposite {
-    CalculatorWithOperator calculatorWithOperator = new CalculatorWithOperator();
-    CalculatorWithMathCopy calculatorWithMathCopy = new CalculatorWithMathCopy();
-    CalculatorWithMathExtends calculatorWithMathExtends = new CalculatorWithMathExtends();
-    CalculatorWithCounterClassic calculatorWithCounterClassic = new CalculatorWithCounterClassic();
+    /*
+    поля
+     */
+    private long countOperation;
+
+    private CalculatorWithOperator calculatorWithOperator;
+
+    private CalculatorWithMathCopy calculatorWithMathCopy;
+
+    private CalculatorWithMathExtends calculatorWithMathExtends;
+/*
+гетер счетчика
+ */
+public long getCountOperation() {
+    return countOperation;
+}
+/*
+метод увеличивает счетчик
+ */
+
+    public void incrementCountOperation() {
+        countOperation++;
+    }
+/*
+конструкторы три штуки
+ */
+public CalculatorWithCounterAutoComposite(CalculatorWithOperator calculatorWithOperator) {
+    this.calculatorWithOperator = calculatorWithOperator;
+}
+
+    public CalculatorWithCounterAutoComposite(CalculatorWithMathCopy calculatorWithMathCopy) {
+        this.calculatorWithMathCopy = calculatorWithMathCopy;
+    }
+
+    public CalculatorWithCounterAutoComposite(CalculatorWithMathExtends calculatorWithMathExtends) {
+        this.calculatorWithMathExtends = calculatorWithMathExtends;
+    }
+
     /*
     7.5.1 4 базовых математических метода (деление, умножение, вычитание, сложение).
 	7.5.2 3 метода (Возведение в целую степень дробного положительного числа, Модуль числа, Корень из числа).
@@ -22,7 +56,7 @@ public class CalculatorWithCounterAutoComposite {
         } else if (calculatorWithMathExtends != null){
             result = calculatorWithMathExtends.fold(x, y);
         }
-        calculatorWithCounterClassic.incrementCountOperation();
+        incrementCountOperation();
     return result;
     } //сумма
 
@@ -35,7 +69,7 @@ public class CalculatorWithCounterAutoComposite {
         } else if (calculatorWithMathExtends != null){
             result = calculatorWithMathExtends.substract(x, y);
         }
-        calculatorWithCounterClassic.incrementCountOperation();
+        incrementCountOperation();
         return result;
     } //вычитание
 
@@ -48,7 +82,7 @@ public class CalculatorWithCounterAutoComposite {
         } else if (calculatorWithMathExtends != null){
             result = calculatorWithMathExtends.divide(x, y);
         }
-        calculatorWithCounterClassic.incrementCountOperation();
+        incrementCountOperation();
         return result;
     } //деление
 
@@ -61,7 +95,7 @@ public class CalculatorWithCounterAutoComposite {
         } else if (calculatorWithMathExtends != null){
             result = calculatorWithMathExtends.multiply(x, y);
         }
-        calculatorWithCounterClassic.incrementCountOperation();
+        incrementCountOperation();
         return result;
     } //умножение
 
@@ -74,7 +108,7 @@ public class CalculatorWithCounterAutoComposite {
         } else if (calculatorWithMathExtends != null){
             result = calculatorWithMathExtends.exponentiation(x, y);
         }
-        calculatorWithCounterClassic.incrementCountOperation();
+        incrementCountOperation();
         return result;
     } //возведение в степень
 
@@ -87,7 +121,7 @@ public class CalculatorWithCounterAutoComposite {
         } else if (calculatorWithMathExtends != null){
             result = calculatorWithMathExtends.module(x);
         }
-        calculatorWithCounterClassic.incrementCountOperation();
+        incrementCountOperation();
         return result;
     } //модуль
 
@@ -100,13 +134,9 @@ public class CalculatorWithCounterAutoComposite {
         } else if (calculatorWithMathExtends != null){
             result = calculatorWithMathExtends.sqrt(x);
         }
-        calculatorWithCounterClassic.incrementCountOperation();
+        incrementCountOperation();
         return result;
     } //корень
-
-    public long getCountOperation(){
-        return calculatorWithCounterClassic.getCount();
-    }
 
 
 
