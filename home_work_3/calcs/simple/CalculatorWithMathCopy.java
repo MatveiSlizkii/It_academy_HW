@@ -13,7 +13,7 @@ public class CalculatorWithMathCopy implements ICalculator {
         return (x * y);
     } //умножение
 
-    public double subtract(double x, double y) {
+    public double substract(double x, double y) {
         return (x - y);
     } //вычитание
 

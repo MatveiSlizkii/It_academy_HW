@@ -40,7 +40,7 @@ public class CalculatorWithCounterAutoCompositeInterface {
 
     public double subtract(double x, double b) {
         incrementCountOperation();
-        return iCalculator.subtract(x, b);
+        return iCalculator.substract(x, b);
     }
 
     public double fold(double x, double b) {

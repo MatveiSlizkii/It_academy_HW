@@ -6,7 +6,7 @@ public interface ICalculator {
 
     double multiply(double x, double y);
 
-    double subtract(double x, double y);
+    double substract(double x, double y);
 
     double fold(double x, double y);
 

@@ -2,25 +2,38 @@ package tower_of_hanoi;
 
 public class Field {
 
+    int count;
+    boolean exit = false;
 
-    public static boolean CheckRange(int fieldSelection) {
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount() {
+        this.count = count + 1;
+    }
+
+    public boolean checkRange(int fieldSelection) {
         boolean checkRange = true;
         if (fieldSelection > 8 || fieldSelection < 3) {
+            System.out.println("Вы ввели неверное поле");
             System.out.println();
             checkRange = false;
         }
         return checkRange;
     } // ввели количество колец, вернули число колец
 
-    public static int[][] CreateArray(int fieldSelection) {
+    public int[][] createArray(int fieldSelection) {
         int[][] fieldGame = new int[fieldSelection + 1][3]; //создали массив
         for (int i = fieldSelection + 1; i > 0; i--) {  //расставляем кольца
             fieldGame[i - 1][0] = i - 1;
         }
         return fieldGame;
-    } //создали массив, вернули массив
+    }
 
-    public static void ShowArray(int[][] fieldGame) { // показываем игровое поле
+    //создали массив, вернули массив
+
+    public void showArray(int[][] fieldGame) { // показываем игровое поле
         for (int i = 0; i < fieldGame.length; i++) {                       //идём по строкам
             for (int j = 0; j < 3; j++) {                               //идём по столбцам
                 if (fieldGame[i][j] == 0) {
@@ -34,7 +47,7 @@ public class Field {
 
     } //показываем поле
 
-    public static void ShowOption() { // показываем варианты действий
+    public void showOption() { // показываем варианты действий
 
         System.out.println("1) 1=>2   3)2=>1  5) 3=>1");
         System.out.println("2) 1=>3   4)2=>3  6) 3=>2");
@@ -45,7 +58,7 @@ public class Field {
     } // показываем варианты действий
 
     // игрок вводит вариант действия
-    public static int Xa(int step) {
+    public int xa(int step) {
         int xa = 0;
         switch (step) {
             case 1:
@@ -70,7 +83,7 @@ public class Field {
         return xa;
     } // понимает из какого столбца брать кольцо
 
-    public static int Xb(int step) {
+    public int xb(int step) {
         int xb = 0;
         switch (step) {
             case 1:
@@ -95,17 +108,19 @@ public class Field {
         return xb;
     } // понимает в какой столбец вставлять кольцо
 
-    public static boolean Exit(int step) {
-        boolean exit = false;
+    public void setExit(int step) {
         if (step == 7) {
-            exit = true;
+            this.exit = true;
         }
-        return exit;
     } // если пользователь решил выйти
+
+    public boolean isExit() {
+        return exit;
+    }
 
     // надо найти необходимые кольца в столбцах
     // для этого нужен сам массив и координаты Xa
-    public static int Ya(int Xa, int[][] fieldGame) {
+    public int ya(int Xa, int[][] fieldGame) {
         int ya = 0;
         for (int i = fieldGame.length - 1; i > 0; i--) {      //находим кольцо которое надо переставить
             if (fieldGame[i][Xa] > fieldGame[i - 1][Xa] && fieldGame[i][Xa] != 0) {
@@ -117,7 +132,7 @@ public class Field {
     } //находит координату кольца по Y в А столбце
 
 
-    public static int Yb(int Xb, int[][] fieldGame) {
+    public int yb(int Xb, int[][] fieldGame) {
         int yb = 0;
         for (int i = fieldGame.length - 1; i > 0; i--) { //находим свободное место там куда хотим перемести кольцо
             if (fieldGame[i][Xb] == 0) {
@@ -130,7 +145,7 @@ public class Field {
 
     // далее делаем проверку можно ли передвинуть кольцо
     // нужно ввести воординаты и само поле
-    public static boolean CorrectStep(int Xa, int Ya, int Xb, int Yb, int[][] fieldGame) {
+    public boolean correctStep(int Xa, int Ya, int Xb, int Yb, int[][] fieldGame) {
         boolean correctStep = false;
         if ((Yb == fieldGame.length - 1) || fieldGame[Ya][Xa] < fieldGame[Yb + 1][Xb]) {
             correctStep = true;
@@ -140,16 +155,16 @@ public class Field {
 
     //если ввел неверный код просим повторить действие // еще на подумать
     // перемещаем крч
-    public static void Peremeshenie(int Xa, int Ya, int Xb, int Yb, int[][] fieldGame) {
+    public void peremeshenie(int Xa, int Ya, int Xb, int Yb, int[][] fieldGame) {
         fieldGame[Yb][Xb] = fieldGame[Ya][Xa]; //переставили кольца
         fieldGame[Ya][Xa] = 0;
     }
 
-    public static boolean YouWin(int[][] fieldGame) {
+    public boolean youWin(int[][] fieldGame) {
         boolean youWin = false;
         if (fieldGame[fieldGame.length - 1][2] == fieldGame.length - 1) {
             for (int i = fieldGame.length - 2; i > 0; i--) {
-                if (fieldGame[i-1][2] == fieldGame[i][2] - 1) {
+                if (fieldGame[i - 1][2] == fieldGame[i][2] - 1) {
                     youWin = true;
                 } else {
                     youWin = false;
@@ -160,129 +175,30 @@ public class Field {
         return youWin;
     }
 
-    public void StartGame() {
-        boolean startGame = false;
-        while (!startGame) {
-            System.out.println("Вы начали игру в Ханойскую башню/n ");
-            System.out.println("Укажите количество колец");
-            System.out.println("Минимальное - 3, максимальное - 8");
-            startGame = true;
-        }
-
+    public void gameMode() {
+        System.out.println("Укажите кто будет играть");
+        System.out.println("1 - Вы");
+        System.out.println("2 - Робот");
     }
 
-    public int[][] MiddleGame(int fieldSelection) {
-        boolean checkRange = CheckRange(fieldSelection);
-        int[][] array = CreateArray(fieldSelection); //создаем поле
-        if (checkRange) {
-            System.out.println("Здесь счетчик ходов");
-            ShowArray(array); //показываекм поле
-            ShowOption(); //показываем опции
-        }
-        return array;
+
+    public void startGame() {
+        System.out.println("Вы начали игру в Ханойскую башню/n ");
+        System.out.println("Укажите количество колец");
+        System.out.println("Минимальное - 3, максимальное - 8");
     }
 
-    public boolean EndGame(int step, int[][] fieldGame) {
-        boolean exit = Exit(step); // смотрим не решил ли пользователь выйти
-        boolean youWin = false;
-        if (!exit) {
-            int xa = Xa(step); //находим столбез из какой палки вынимаем кольцо
-            int xb = Xb(step); //находим столбез на какую палку вставляем кольцо
-            int ya = Ya(xa, fieldGame); //находим строку из какой палки вынимаем кольцо
-            int yb = Yb(xb, fieldGame); //находим строку на какую палку вставляем кольцо
-            boolean correctStep = CorrectStep(xa, ya, xb, yb, fieldGame); //проверяем возможен ли такой ход
-            if (correctStep) {
-                Peremeshenie(xa, ya, xb, yb, fieldGame);
-            } else {
-                System.out.println("Данный ход невозможен!");
-                System.out.println("Повторите попытку");
-            }
-            youWin = YouWin(fieldGame);
-            ShowArray(fieldGame); //показываекм поле
-            if (!youWin) {
-                ShowOption(); //показываем опции
-            } else {
-                System.out.println("Поздравляем вы прошли игру!");
-            }
-        } else {
-            youWin = true;
-            System.out.println("Вы вышли с игры");
+
+    public boolean moveStep(int step, int[][] fieldGame) {
+        int xa = xa(step); //находим столбез из какой палки вынимаем кольцо
+        int xb = xb(step); //находим столбез на какую палку вставляем кольцо
+        int ya = ya(xa, fieldGame); //находим строку из какой палки вынимаем кольцо
+        int yb = yb(xb, fieldGame); //находим строку на какую палку вставляем кольцо
+        boolean correctStep = correctStep(xa, ya, xb, yb, fieldGame);
+        if (correctStep) {
+            peremeshenie(xa, ya, xb, yb, fieldGame);
         }
-        return youWin;
-    }
-
-    //самая главная часть!
-    private boolean startGame, exit, youWin;
-    private int[][] array;
-    private int hz = -1;
-    private int step1 = 0;
-    private int count = 0;
-
-    public boolean ShowYouWin() {
-        return youWin;
-    }
-
-    public int ShowStep1() {
-        return step1;
-    }
-
-    public void entStep1(int step) {
-        step1 = step;
-    }
-
-    public void AllGame(int step) {
-
-        while (!startGame) {
-            System.out.println("Вы начали игру в Ханойскую башню");
-            System.out.println("Укажите количество колец");
-            System.out.println("Минимальное - 3, максимальное - 8");
-            startGame = true;
-        }
-        if (hz == 0) {
-            boolean checkRange = CheckRange(step); // проверка правильности вводимого значения
-            if (checkRange) {
-                array = CreateArray(step); //создаем поле
-                System.out.println("Начинаем игру!");
-                ShowArray(array);
-                ShowOption();
-                startGame = true;
-            } else {
-                System.out.println("Вы ввели неправильное значение");
-                System.out.println("Попробуйте еще раз");
-                System.out.println("Минимальное - 3, максимальное - 8");
-                hz = -1;
-            }
-        }
-        if (hz > 0) {
-            exit = Exit(step);
-            if (!exit) {
-                count += 1;
-                int xa = Xa(step); //находим столбез из какой палки вынимаем кольцо
-                int xb = Xb(step); //находим столбез на какую палку вставляем кольцо
-                int ya = Ya(xa, array); //находим строку из какой палки вынимаем кольцо
-                int yb = Yb(xb, array); //находим строку на какую палку вставляем кольцо
-                boolean correctStep = CorrectStep(xa, ya, xb, yb, array); //проверяем возможен ли такой ход
-                if (correctStep) {
-                    Peremeshenie(xa, ya, xb, yb, array);
-                } else {
-                    System.out.println("Данный ход невозможен!");
-                    System.out.println("Повторите попытку");
-                }
-                ShowArray(array);
-                ShowOption();
-                youWin = YouWin(array);
-                if (youWin) {
-                    System.out.println("Поздравляем вы прошли игру за " + count + " ходов!");
-
-                }
-            } else {
-                System.out.println("Вы завершили игру");
-                youWin = true;
-            }
-
-
-        }
-        hz += 1;
+        return correctStep;
     }
 
 

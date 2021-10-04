@@ -13,10 +13,10 @@ public class CalculatorWithOperator implements ICalculator {
         return (x * y);
     } //умножение
 
-    public double subtract(double x, double y) {
+    public double substract(double x, double y) {
         return (x - y);
     } //деление
-        public double fold(double x, double y) {
+    public double fold(double x, double y) {
         return (x + y);
     } //сложение
 
