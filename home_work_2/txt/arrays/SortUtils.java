@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class SortUtils {
-    public static int[] bubbleSorter(int[] array) {
+    public static void bubbleSorter(int[] array) {
         boolean found = true; //надо ли делать сортировку до сих пор
         while (found) {
             found = false;
@@ -17,10 +17,9 @@ public class SortUtils {
                 }
             }
         }
-        return array;
     }
 
-    public static int[] shakerSorter(int[] array) {
+    public static void shakerSorter(int[] array) {
         boolean found = true; //надо ли делать сортировку до сих пор
         while (found) {
             found = false;
@@ -40,8 +39,6 @@ public class SortUtils {
                 }
             }
         }
-
-        return array;
     }
 
 //    public static void main(String[] args) {

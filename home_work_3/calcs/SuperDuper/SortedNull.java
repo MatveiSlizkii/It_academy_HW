@@ -7,10 +7,10 @@ public class SortedNull {
         boolean isSorted = false;
         while (!isSorted) {
             isSorted = true;
-            for (int i = expressionArray.length - 2; i > 0; i--) {
-                if (expressionArray[i] == null && expressionArray[i + 1] != null) {
-                    expressionArray[i] = expressionArray[i + 1];
-                    expressionArray[i + 1] = null;
+            for (int i = expressionArray.length - 2; i > -1; i--) {
+                if (expressionArray[i] == null && expressionArray[i+1] != null) {
+                    expressionArray[i] = expressionArray[i+1];
+                    expressionArray[i+1] = null;
                     isSorted = false;
                 }
             }
