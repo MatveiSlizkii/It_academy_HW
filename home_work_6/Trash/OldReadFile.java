@@ -1,9 +1,9 @@
-package home_work_6;
+package home_work_6.Trash;
 
 import java.io.IOException;
 
 
-public class ReadFile {
+public class OldReadFile {
     public static void main(String[] args) throws IOException {
 //        Path fileName = Path.of("D:\\JavaProject\\Wow\\Тест Война и мир_книга .txt");
 //        String actual = Files.readString(fileName);
