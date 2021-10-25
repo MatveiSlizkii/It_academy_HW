@@ -18,11 +18,11 @@ package home_work_5;
  */
 
 
-import home_work_5.GenerateNames.GenerateName;
-import home_work_5.Sorts.AgeSort;
-import home_work_5.Sorts.MarkSort;
-import home_work_5.Sorts.NameSort;
-import home_work_5.Sorts.api.ISortsStudent;
+import home_work_5.generateNames.GenerateName;
+import home_work_5.sorts.AgeSort;
+import home_work_5.sorts.MarkSort;
+import home_work_5.sorts.NameSort;
+import home_work_5.sorts.api.ISortsStudent;
 import home_work_5.Student;
 
 import java.util.ArrayList;

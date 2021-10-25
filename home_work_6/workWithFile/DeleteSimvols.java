@@ -18,11 +18,12 @@ public class DeleteSimvols {
         }
         //в приоритете разобраться как сделать всего ва реплейса
         almostBook = almostBook
-                .replaceAll("[,.:;\"!?()\n\r]", " ")
-                .replaceAll(" - ", " ")
-                .replaceAll("- ", " ")
-                .replaceAll("- ", " ")
-                .replaceAll(" +", " ");
+//                .replaceAll("[,.:;\"!?()\n\r]", " ")
+//                .replaceAll(" - ", " ")
+//                .replaceAll("- ", " ")
+//                .replaceAll(" +", " ")
+                .replaceAll("(\\.|,|:|;|\"|!|\\?|\\(|\\)|\n|\r| - |- | +)",
+                        " ");
         //нужно еще сделать проверку на последдний символ тоже может стоять "-"
         this.book = almostBook;
     }

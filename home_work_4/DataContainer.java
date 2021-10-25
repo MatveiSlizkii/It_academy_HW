@@ -42,6 +42,7 @@ public class DataContainer<T> {
     5 вводим индекс - получаем значение
      */
 
+
     public T get(int index) {
         if (index > data.length - 1) {
             return null;

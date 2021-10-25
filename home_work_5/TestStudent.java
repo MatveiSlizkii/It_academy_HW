@@ -1,6 +1,6 @@
 package home_work_5;
 
-import home_work_5.GenerateNames.GenerateName;
+import home_work_5.generateNames.GenerateName;
 
 import java.io.*;
 import java.util.ArrayList;

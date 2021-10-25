@@ -11,18 +11,32 @@ public class Student{
         this.name = name;
     }
 
+    /**
+     * @return возраст студента
+     */
     public int getAge() {
         return age;
     }
 
+    /**
+     * @param age возраст студента
+     */
     public void setAge(int age) {
         this.age = age;
     }
 
+    /**
+     *
+     * @return имя студента
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @param name сохраняеи имя студента
+     */
     public void setName(String name) {
         this.name = name;
     }
